@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Pago5363922.ViewModel"
+             x:Class="Pago5363922.MainPage"
+             BackgroundImageSource="dinero.jpg">
+
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!--<Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />-->
+
+            <Label Text="Sueldo del Trabajador:"
+           FontSize="25"
+           FontFamily="Cambria"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           BackgroundColor="Black"
+            TextColor="Gainsboro"/>
+
+            <Label Text="Ingrese el sueldo del trabajador:"
+               FontSize="14"
+               FontFamily="Arial"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+                TextColor="White"/>
+            
+            <Entry 
+               Keyboard="Numeric"
+               Text="{Binding Sueldo}"
+               Placeholder="Sueldo" 
+               BackgroundColor="Black"
+                 TextColor="White"
+                WidthRequest="150"/>
+            
+            <Button Text="Calcular Sueldo"
+                Command="{Binding CalcularCommand}" 
+                 TextColor="White"
+                 BackgroundColor="BlueViolet"
+                    WidthRequest="200"/>
+            
+            <Label x:Name="ResultadoLabel"
+               FontSize="14"
+                FontFamily="Arial"
+                FontAttributes="Bold"
+               HorizontalOptions="Center" 
+               BackgroundColor="Black"
+                TextColor="White"/>
+
+            <Entry 
+               Keyboard="Numeric"
+               Text="{Binding Total}"
+               Placeholder="Sueldo"
+               BackgroundColor="Black"
+                TextColor="White"
+                WidthRequest="300"/>
+        </VerticalStackLayout>
+
+</ContentPage>
